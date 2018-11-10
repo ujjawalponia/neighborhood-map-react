@@ -9,76 +9,56 @@ class App extends Component {
         super(props);
         this.state = {
             'alllocations': [
-                {
-                    'name': "Bhaskar Vidhya Ashram",
-                    'type': "Private School",
-                    'latitude': 26.9053803,
-                    'longitude': 75.7259351,
-                    'streetAddress': "Lalarpura Road, Gandhi Path"
-                },
-                {
-                    'name': "Hotel Chhavi Holidays",
-                    'type': "Hotel",
-                    'latitude': 26.9055311,
-                    'longitude': 75.728137,
-                    'streetAddress': "Plot No. 11/12, Vivek Vihar"
-                },
-                {
-                    'name': "Handi",
+                {'name': "Ujjawal Packers and Movers",
+                    'type': "Moving Company",
+                    'latitude': 26.9053802,
+                    'longitude': 75.7259451,
+                    'streetAddress': "Lalarpura Rd, Gandhi Path, Ind"},
+                {'name': "Rahul Bakery Shop",
+                    'type': "Backer's Shop",
+                    'latitude': 26.9055411,
+                    'longitude': 75.725137,
+                    'streetAddress': "Plot No. 11, Vivek Vihar, Ind"},
+                {'name': "Taj",
                     'type': "Restaurant",
-                    'latitude': 26.906990,
-                    'longitude': 75.742848,
-                    'streetAddress': "18, Gautam Marg, Vaishali Nagar"
-                },
-                {
-                    'name': "INOX - Amrapali",
+                    'latitude': 26.906970,
+                    'longitude': 75.743848,
+                    'streetAddress': "18th Street, Gautam Marg, Ind"},
+                {'name': "PVR Cinemas",
                     'type': "Movie Theater",
-                    'latitude': 26.912631,
-                    'longitude': 75.743389,
-                    'streetAddress': "C-1, Vaibhav Complex"
-                },
-                {
-                    'name': "Blue Dart",
+                    'latitude': 26.912831,
+                    'longitude': 75.748389,
+                    'streetAddress': "B-19, Vaibhav Complex, Ind"},
+                {'name': "DTDC Courier",
                     'type': "Courier Service",
-                    'latitude': 26.911103,
-                    'longitude': 75.738878,
-                    'streetAddress': "Vaishali Tower, Vaishali Nagar"
-                },
-                {
-                    'name': "Hotel Seven Seas",
-                    'type': "3-Star Hotel",
-                    'latitude': 26.906069,
-                    'longitude': 75.739583,
-                    'streetAddress': "A-6, Nemi Nagar, Gandhi Path"
-                },
-                {
-                    'name': "Global Heart & General Hospital",
-                    'type': "Hospital",
-                    'latitude': 26.905506,
-                    'longitude': 75.738762,
-                    'streetAddress': "C1/27, Opposite Bharat Apartment"
-                },
-                {
-                    'name': "Shri Swaminarayan Mandir",
+                    'latitude': 26.911203,
+                    'longitude': 75.738678,
+                    'streetAddress': "A5/19, Vaishali Tower, Ind"},
+                {'name': "Hotel Seven Stars",
+                    'type': "5 Star Hotel",
+                    'latitude': 26.906269,
+                    'longitude': 75.739383,
+                    'streetAddress': "A-63, Nemi Nagar, Gandhi Path, Ind"},
+                {'name': "Vedik Vidya Niketan Public School",
+                    'type': "School",
+                    'latitude': 26.905546,
+                    'longitude': 75.738765,
+                    'streetAddress': "B-1, Opposite Bharat Apartment, Ind"},
+                {'name': "Shri Hanuman Mandir",
                     'type': "Hindu Temple",
-                    'latitude': 26.902167,
-                    'longitude': 75.740999,
-                    'streetAddress': "Sector 9, Chitrakoot"
-                },
-                {
-                    'name': "Pratap Marriage Garden",
+                    'latitude': 26.902166,
+                    'longitude': 75.740979,
+                    'streetAddress': "B-12, Sector 9, Chitrakoot, Ind"},
+                {'name': "Raj Marriage Garden",
                     'type': "Banquet Hall",
-                    'latitude': 26.906464,
-                    'longitude': 75.732889,
-                    'streetAddress': "Arpit Nagar, B Block"
-                },
-                {
-                    'name': "ICICI Bank",
-                    'type': "Bank",
-                    'latitude': 26.913179,
-                    'longitude': 75.743447,
-                    'streetAddress': "Lalarpura Road, Gandhi Path"
-                }
+                    'latitude': 26.906864,
+                    'longitude': 75.739889,
+                    'streetAddress': "A1/15, Arpit Nagar, Ind"},
+                {'name': "ICICI Bank ATM",
+                    'type': "ATM",
+                    'latitude': 26.913079,
+                    'longitude': 75.743407,
+                    'streetAddress': "D-15, Lalarpura Road, Gandhi Path, Ind"}
             ],
             'map': '',
             'infowindow': '',
@@ -92,15 +72,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        // Connect the initMap() function within this class to the global window context,
-        // so Google Maps can invoke it
+        // Connect the initMap() function with-in this class to the global window context, the so Google Maps can invoke it
         window.initMap = this.initMap;
-        // Asynchronously load the Google Maps script, passing in the callback reference
+        // For Asynchronou loading of Google Maps script, passing in the callback reference
         loadMapJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDh3g5CPsOlDQjg84GHiGr78n8XPVQxOwA&callback=initMap')
     }
 
     /**
-     * Initialise the map once the google map script is loaded
+     * Initialising the map once the google map's script is loaded
      */
     initMap() {
         var self = this;
@@ -108,8 +87,8 @@ class App extends Component {
         var mapview = document.getElementById('map');
         mapview.style.height = window.innerHeight + "px";
         var map = new window.google.maps.Map(mapview, {
-            center: {lat: 26.907502, lng: 75.737586},
-            zoom: 15,
+            center: {lat: 26.9053802, lng: 75.7259451},
+            zoom: 16,
             mapTypeControl: false
         });
 
