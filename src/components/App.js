@@ -209,7 +209,7 @@ class App extends Component {
             <div>
                 <LocationList key="100" alllocations={this.state.alllocations} openInfoWindow={this.openInfoWindow}
                               closeInfoWindow={this.closeInfoWindow}/>
-                <div id="map"></div>
+                <div id="map" role="application" aria-label="map"></div>
             </div>
         );
     }
@@ -226,6 +226,10 @@ function loadMapJS(src) {
     var script = window.document.createElement("script");
     script.src = src;
     script.async = true;
+    script.defer = true;
+    window.gm_authFailure = () => {
+        document.write("Google Maps API Authorization Failure");
+    };
     script.onerror = function () {
         document.write("Google Maps can't be loaded");
     };
