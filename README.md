@@ -11,9 +11,6 @@ Features Include:
 * Foursquare API is used to show related information of the location.
 
 
-[Demo](http://ujjawalponia.github.io/neighborhood-map-react)
-
-
 References:
 
 [Google Map API](https://developers.google.com/maps/documentation/javascript/tutorial)
