@@ -21,3 +21,14 @@ References:
 [Foursquare API](https://developer.foursquare.com)
 
 [Udacity Intro to Ajax](https://www.udacity.com/course/ud110)
+
+## Install and Run the app
+
+* Clone this repo in your terminal with the command `git clone https://github.com/ujjawalponia/neighborhood-map-react.git`
+* or just download it to your computer
+* open the terminal and run following commmands
+* change directory into `cd react-neighbourhood-map`
+* run `npm install` in your terminal
+* run `npm start` and the app will run locally on port: 3000
+
+**Note**: This application uses the integrated Service Worker from the create-react-app. It doesn't work in development environment, so, in order for it to work, you should do the build, and not just use npm start. (Reffer to the steps above).
